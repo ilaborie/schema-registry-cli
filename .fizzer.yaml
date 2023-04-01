@@ -1,0 +1,7 @@
+imports:
+  - uri: "{{ ffizer_src_uri }}"
+    rev: "{{ ffizer_src_rev }}"
+    subfolder: "rust-lib"
+  - uri: "{{ ffizer_src_uri }}"
+    rev: "{{ ffizer_src_rev }}"
+    subfolder: "rust-github-app"

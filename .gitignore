@@ -1,0 +1,11 @@
+/.cargo/
+/target
+
+.idea
+*.iml
+
+.criterion
+perf.data*
+/tmp
+
+# Cargo.lock should be committed for applications

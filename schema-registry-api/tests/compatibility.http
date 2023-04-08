@@ -1,0 +1,30 @@
+
+
+@base_url=http://localhost:8081
+# @base_url=http://localhost:9081
+
+@subjectName=plop
+@schemaVersion=latest
+
+###
+# @name compatibilityCheckVersion
+POST {{base_url}}/compatibility/subjects/{{subjectName}}/versions/{{schemaVersion}}
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+    "schema": "{\"type\": \"record\",\"name\": \"test\",\"fields\":[{\"type\": \"string\",\"name\": \"field1\"},{\"type\": \"int\",\"name\": \"field2\"}]}"
+}
+
+
+###
+# @name compatibilityCheckVersions
+POST {{base_url}}/compatibility/subjects/{{subjectName}}/versions
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+    "schema": "{\"type\": \"record\",\"name\": \"test\",\"fields\":[{\"type\": \"string\",\"name\": \"field1\"},{\"type\": \"int\",\"name\": \"field2\"}]}"
+}
+
+

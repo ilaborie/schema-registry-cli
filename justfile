@@ -6,10 +6,10 @@ default:
 
 # Install require tools
 requirements:
+    cargo install cargo-binstall 
     rustup toolchain add nightly
-    cargo install cargo-watch cargo-audit cargo-deny cargo-msrv cargo-semver-checks
-    cargo-sort 
-    cargo install cargo-nextest
+    cargo binstall cargo-watch cargo-audit cargo-deny cargo-msrv cargo-semver-checks cargo-llvm-cov
+    cargo binstall cargo-nextest
 
 # Run TDD mode
 tdd:
@@ -22,8 +22,10 @@ help:
 # Launch tests
 test:
     @echo "🧪 Testing..."
+    @just dev-kafka up -d --wait
     cargo nextest run
     cargo test --doc
+    @just dev-kafka down
 
 # Format the code
 format:
@@ -43,6 +45,10 @@ check:
     cargo sort --workspace --grouped --check
     @just lint
     @just test
+
+# Check code coverage
+coverage:
+    cargo llvm-cov --open
 
 # Audit (security issue, licences)
 audit:
@@ -80,3 +86,7 @@ install:
 # Update with template
 dev-template:
     ffizer apply --source ../ffizer-templates --rev master --source-subfolder rust-app --destination .
+
+# Start/stop a kafka+schema-registry with docker-compose
+dev-kafka *ARGS="up -d":
+    docker-compose --file ./docker/docker-compose.yaml {{ARGS}}

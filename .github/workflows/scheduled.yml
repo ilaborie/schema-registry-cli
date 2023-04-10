@@ -26,6 +26,14 @@ jobs:
       - name: cargo generate-lockfile
         if: hashFiles('Cargo.lock') == ''
         run: cargo generate-lockfile
+      - name: Run docker compose
+        uses: isbang/compose-action@v1.4.1
+        with:
+          compose-file: "./docker/docker-compose.yaml"
+      - name: 'Wait until the container is healthy'
+        uses: raschmitt/wait-for-healthy-container/@master
+        with:
+          container-name: schema-registry
       - name: cargo test --locked
         run: cargo test --locked --all-features --all-targets
 
@@ -48,6 +56,14 @@ jobs:
       - name: cargo update
         if: hashFiles('Cargo.lock') != ''
         run: cargo update
+      - name: Run docker compose
+        uses: isbang/compose-action@v1.4.1
+        with:
+          compose-file: "./docker/docker-compose.yaml"
+      - name: 'Wait until the container is healthy'
+        uses: raschmitt/wait-for-healthy-container/@master
+        with:
+          container-name: schema-registry
       - name: cargo test
         if: hashFiles('Cargo.lock') != ''
         run: cargo test --locked --all-features --all-targets

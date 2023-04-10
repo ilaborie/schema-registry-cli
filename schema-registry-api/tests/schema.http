@@ -1,0 +1,28 @@
+
+
+@base_url=http://localhost:8081
+# @base_url=http://localhost:9081
+
+@subjectName=plop
+@schemaId=1
+
+###
+# @name schemaGet
+GET {{base_url}}/schemas/ids/{{schemaId}}
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name schemaGetSchema
+GET {{base_url}}/schemas/ids/{{schemaId}}/schema
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name schemaTypes
+GET {{base_url}}/schemas/types
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name schemaVersions
+GET {{base_url}}/schemas/ids/{{schemaId}}/versions
+Accept: application/vnd.schemaregistry.v1+json
+

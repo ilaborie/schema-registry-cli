@@ -27,12 +27,36 @@ jobs:
       - name: cargo generate-lockfile
         if: hashFiles('Cargo.lock') == ''
         run: cargo generate-lockfile
+      - name: Restore cached target/
+        id: target-cache-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            target
+            /home/runner/.cargo
+          key: ${{ matrix.toolchain }}-target
+      - name: Run docker compose
+        uses: isbang/compose-action@v1.4.1
+        with:
+          compose-file: "./docker/docker-compose.yaml"
+      - name: 'Wait until the container is healthy'
+        uses: raschmitt/wait-for-healthy-container/@master
+        with:
+          container-name: schema-registry
       # https://twitter.com/jonhoo/status/1571290371124260865
       - name: cargo test --locked
         run: cargo test --locked --all-features --all-targets
       # https://github.com/rust-lang/cargo/issues/6669
       - name: cargo test --doc
         run: cargo test --locked --all-features --doc
+      - name: Save cached target/
+        id: target-cache-save
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            target
+            /home/runner/.cargo
+          key: ${{ steps.target-cache-restore.outputs.cache-primary-key }}
 
   # Should be OK on ubuntu with stable minimal version for dependencies
   minimal:
@@ -50,28 +74,56 @@ jobs:
         run: rustup default stable
       - name: cargo update -Zminimal-versions
         run: cargo +nightly update -Zminimal-versions
+      - name: Run docker compose
+        uses: isbang/compose-action@v1.4.1
+        with:
+          compose-file: "./docker/docker-compose.yaml"
+      - name: 'Wait until the container is healthy'
+        uses: raschmitt/wait-for-healthy-container/@master
+        with:
+          container-name: schema-registry
       - name: cargo test
         run: cargo test --locked --all-features --all-targets
 
   # Should be OK on windows and mac with stable
-  os-check:
-    runs-on: ${{ matrix.os }}
-    name: ${{ matrix.os }} / stable
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [macos-latest, windows-latest]
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-      - name: Install stable
-        uses: dtolnay/rust-toolchain@stable
-      - name: cargo generate-lockfile
-        if: hashFiles('Cargo.lock') == ''
-        run: cargo generate-lockfile
-      - name: cargo test
-        run: cargo test --locked --all-features --all-targets
+  # os-check:
+  #   runs-on: ${{ matrix.os }}
+  #   name: ${{ matrix.os }} / stable
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       os: [macos-latest, windows-latest]
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         submodules: true
+  #     - name: Install stable
+  #       uses: dtolnay/rust-toolchain@stable
+  #     - name: cargo generate-lockfile
+  #       if: hashFiles('Cargo.lock') == ''
+  #       run: cargo generate-lockfile
+  #     - name: Install docker
+  #       if: runner.os == 'macOS'
+  #       run: |
+  #         brew install docker docker-machine docker-compose
+  #         docker version
+  #         docker-compose version
+  #       timeout-minutes: 12
+  #     - name: Use docker experimental
+  #       if: matrix.os == 'windows-latest'
+  #       run: |
+  #         cd "C:\Program Files\Docker\Docker"
+  #         ./DockerCli.exe -SwitchDaemon
+  #     - name: Run docker compose
+  #       uses: isbang/compose-action@v1.4.1
+  #       with:
+  #         compose-file: "./docker/docker-compose.yaml"
+  #     - name: 'Wait until the container is healthy'
+  #       uses: raschmitt/wait-for-healthy-container/@master
+  #       with:
+  #         container-name: schema-registry
+  #     - name: cargo test
+  #       run: cargo test --locked --all-features --all-targets
 
   # Build the code coverage
   coverage:
@@ -90,8 +142,32 @@ jobs:
       - name: cargo generate-lockfile
         if: hashFiles('Cargo.lock') == ''
         run: cargo generate-lockfile
+      - name: Restore cached target/
+        id: target-cache-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            target
+            /home/runner/.cargo
+          key: coverage-target
+      - name: Run docker compose
+        uses: isbang/compose-action@v1.4.1
+        with:
+          compose-file: "./docker/docker-compose.yaml"
+      - name: 'Wait until the container is healthy'
+        uses: raschmitt/wait-for-healthy-container/@master
+        with:
+          container-name: schema-registry
       - name: cargo llvm-cov
         run: cargo llvm-cov --locked --all-features --lcov --output-path lcov.info
+      - name: Save cached target/
+        id: target-cache-save
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            target
+            /home/runner/.cargo
+          key: ${{ steps.target-cache-restore.outputs.cache-primary-key }}
       # - name: Upload to codecov.io
       #   uses: codecov/codecov-action@v3
       #   with:

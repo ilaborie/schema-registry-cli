@@ -1,0 +1,45 @@
+
+
+@base_url=http://localhost:8081
+# @base_url=http://localhost:9081
+
+@subjectName=plop-adad
+@schemaVersion=latest
+
+###
+# @name configGet
+GET {{base_url}}/config
+Accept: application/vnd.schemaregistry.v1+json
+
+
+###
+# @name configSet
+PUT {{base_url}}/config
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+   "compatibility": "BACKWARD"
+}
+
+
+###
+# @name configSetSubject
+PUT {{base_url}}/config/{{subjectName}}
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+  "compatibility": "BACKWARD"
+}
+
+###
+# @name configGetSubject
+GET {{base_url}}/config/{{subjectName}}
+Accept: application/vnd.schemaregistry.v1+json
+
+
+###
+# @name configDeleteSubject
+DELETE {{base_url}}/config/{{subjectName}}
+Accept: application/vnd.schemaregistry.v1+json

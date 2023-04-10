@@ -1,0 +1,45 @@
+
+
+@base_url=http://localhost:8081
+# @base_url=http://localhost:9081
+
+@subjectName=plop-adad
+@schemaVersion=latest
+
+###
+# @name modeGet
+GET {{base_url}}/mode
+Accept: application/vnd.schemaregistry.v1+json
+
+
+
+###
+# @name modeSet
+PUT {{base_url}}/mode
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+  "mode": "READWRITE"
+}
+
+###
+# @name modeGetSubject
+GET {{base_url}}/mode/{{subjectName}}
+Accept: application/vnd.schemaregistry.v1+json
+
+
+###
+# @name modeSetSubject
+PUT {{base_url}}/mode/{{subjectName}}
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+  "mode": "READWRITE"
+}
+
+###
+# @name modeDeleteSubject
+DELETE {{base_url}}/mode/{{subjectName}}
+Accept: application/vnd.schemaregistry.v1+json

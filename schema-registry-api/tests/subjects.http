@@ -1,0 +1,82 @@
+
+
+@base_url=http://localhost:8081
+# @base_url=http://localhost:9081
+
+@subjectName=plop
+@schemaVersion=latest
+
+###
+# @name subjectsList
+GET {{base_url}}/subjects
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name subjectVersions
+GET {{base_url}}/subjects/{{subjectName}}/versions
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name subjectDelete
+DELETE {{base_url}}/subjects/{{subjectName}}
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name subjectVersion
+GET {{base_url}}/subjects/{{subjectName}}/versions/{{schemaVersion}}
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name subjectSchema
+GET {{base_url}}/subjects/{{subjectName}}/versions/{{schemaVersion}}/schema
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name subjectDeleteVersion
+DELETE {{base_url}}/subjects/{{subjectName}}/versions/{{schemaVersion}}
+Accept: application/vnd.schemaregistry.v1+json
+
+###
+# @name subjectReferencedBy
+GET {{base_url}}/subjects/{{subjectName}}/versions/{{schemaVersion}}/referencedby
+Accept: application/vnd.schemaregistry.v1+json
+
+
+###
+# @name subjectCheckSchema
+POST {{base_url}}/subjects/{{subjectName}}
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+    "schema": "{\"type\":\"record\",\"name\":\"test\",\"fields\":[{\"type\":\"string\",\"name\":\"field1\"},{\"type\":\"com.acme.Referenced\",\"name\":\"int\"}]}",
+    "schemaType": "AVRO",
+  "references": [
+    {
+       "name": "com.acme.Referenced",
+       "subject":  "childSubject",
+       "version": 1
+    }
+  ]
+}
+
+
+###
+# @name subjectNewVersion
+POST {{base_url}}/subjects/{{subjectName}}/versions
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+    "schema": "{\"type\":\"record\",\"name\":\"test\",\"fields\":[{\"type\":\"string\",\"name\":\"field1\"},{\"type\":\"com.acme.Referenced\",\"name\":\"int\"}]}",
+    "schemaType": "AVRO",
+  "references": [
+    {
+       "name": "com.acme.Referenced",
+       "subject":  "childSubject",
+       "version": 1
+    }
+  ]
+}
+
+

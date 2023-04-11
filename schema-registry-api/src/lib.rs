@@ -14,8 +14,3 @@ pub use self::domain::*;
 pub use self::init_tracing::*;
 pub use self::service::*;
 pub use self::settings::*;
-
-/// Plop
-pub fn plop() {
-    println!("plop");
-}

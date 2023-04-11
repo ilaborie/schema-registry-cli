@@ -35,11 +35,6 @@ impl FromStr for SubjectName {
         Ok(Self(s.to_string()))
     }
 }
-impl From<String> for SubjectName {
-    fn from(value: String) -> Self {
-        Self(value)
-    }
-}
 
 impl Display for SubjectName {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,4 +42,32 @@ impl Display for SubjectName {
     }
 }
 
-// FIXME test parse
+#[cfg(test)]
+mod tests {
+    use assert2::{check, let_assert};
+
+    use super::*;
+
+    #[test]
+    fn should_parse_subject_name() {
+        let name = "plop";
+        let result = name.parse::<SubjectName>();
+        let_assert!(Ok(subject) = result);
+        check!(subject.as_ref() == name);
+        check!(subject.to_lowercase() == name);
+    }
+
+    #[test]
+    fn should_not_parse_empty_subject_name() {
+        let name = "";
+        let result = name.parse::<SubjectName>();
+        let_assert!(Err(SubjectNameError::EmptyName) = result);
+    }
+
+    #[test]
+    fn should_not_parse_bad_subject_name() {
+        let name = "\nasd";
+        let result = name.parse::<SubjectName>();
+        let_assert!(Err(SubjectNameError::InvalidChar(_)) = result);
+    }
+}

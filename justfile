@@ -83,24 +83,14 @@ doc:
 install:
     cargo install --path .
 
-# Generate changelog
-changelog:
-    git cliff --verbose --output CHANGELOG.md
-    @git add CHANGELOG.md
-    @if [ -n "$(git status --porcelain)" ]; then \
-        cog commit docs '📄 Update changelog'; \
-    else \
-        echo "no changes to commit"; \
-    fi
 
 # Release {major, minor, patch, release, rc, beta, alpha} or version
-release version="patch":
-    cargo release --workspace {{version}}
+release:
+    cargo smart-release --update-crates-index schema-registry-api
 
 # DO Release {major, minor, patch, release, rc, beta, alpha} or version
-release-execute version="patch":
-    just changelog 
-    cargo release  --workspace --execute {{version}}
+release-execute: 
+    cargo smart-release --update-crates-index schema-registry-api --execute
 
 # Update with template
 dev-template:

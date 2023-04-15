@@ -5,7 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.1.3 (2023-04-15)
+
+### Chore
+
+ - <csr-id-f72a149825923327b4679d602e3113e44bce9477/> 🐛 Fix links
+
+### Commit Statistics
+
+<csr-read-only-do-not-edit/>
+
+ - 1 commit contributed to the release.
+ - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
+ - 0 issues like '(#ID)' were seen in commit messages
+
+### Commit Details
+
+<csr-read-only-do-not-edit/>
+
+<details><summary>view details</summary>
+
+ * **Uncategorized**
+    - 🐛 Fix links ([`f72a149`](https://github.com/ilaborie/schema-registry-cli/commit/f72a149825923327b4679d602e3113e44bce9477))
+</details>
+
 ## 0.1.2 (2023-04-15)
+
+<csr-id-546006e723adb1bc3a73d989ec3b166d6fe5af07/>
 
 ### Documentation
 
@@ -17,12 +43,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
  - <csr-id-546006e723adb1bc3a73d989ec3b166d6fe5af07/> 🧪 Improve doc and tests
 
+### Chore
+
+ - <csr-id-97a400797eafc4f3cc280fe08f6e12fdfa7a088f/> 🏷️ Release schema-registry-api v0.1.2
+
 ### Commit Statistics
 
 <csr-read-only-do-not-edit/>
 
- - 4 commits contributed to the release.
- - 4 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 5 commits contributed to the release.
+ - 5 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -32,6 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - 🏷️ Release schema-registry-api v0.1.2 ([`97a4007`](https://github.com/ilaborie/schema-registry-cli/commit/97a400797eafc4f3cc280fe08f6e12fdfa7a088f))
     - 🐛 Fix invalid badges ([`4460f7f`](https://github.com/ilaborie/schema-registry-cli/commit/4460f7fd1ceffdb764b2095ccb7615b1326b35ef))
     - 🐛 Fix bad mardkown links ([`485a205`](https://github.com/ilaborie/schema-registry-cli/commit/485a20526eeaf00c681d1bd50310559141f3bbe5))
     - 🧪 Improve doc and tests ([`546006e`](https://github.com/ilaborie/schema-registry-cli/commit/546006e723adb1bc3a73d989ec3b166d6fe5af07))
@@ -39,6 +70,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 </details>
 
 ## 0.1.1 (2023-04-15)
+
+<csr-id-55b5754c5baae15d6e80aa8daee0afe28787fa21/>
 
 ### Chore
 

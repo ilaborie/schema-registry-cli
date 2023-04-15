@@ -2,7 +2,10 @@
 name = "schema-registry-api"
 version = "0.1.0"
 authors = ["Igor Laborie <ilaborie@gmail.com>"]
+description = "REST API for a schema-registry"
+license = "MIT OR Apache-2.0"
 edition = "2021"
+rust-version = "1.64.0" # MSRV from clap
 
 keywords = ["schema-registry"]
 categories = []

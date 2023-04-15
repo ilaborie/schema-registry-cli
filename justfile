@@ -6,10 +6,10 @@ default:
 
 # Install require tools
 requirements:
-    cargo install cargo-binstall 
     rustup toolchain add nightly
     cargo binstall cargo-watch cargo-audit cargo-deny cargo-msrv cargo-semver-checks cargo-llvm-cov
     cargo binstall cargo-nextest
+    cargo binstall cocogitto
 
 # Run TDD mode
 tdd:
@@ -82,6 +82,16 @@ doc:
 # Install to the cargo bin path
 install:
     cargo install --path .
+
+# Generate changelog
+changelog:
+    git cliff --verbose --output CHANGELOG.md
+    git add CHANGELOG.md
+    cog commit docs '📄 Update changelog'
+
+# Release
+release *ARGS:
+    cargo release {{ARGS}}
 
 # Update with template
 dev-template:

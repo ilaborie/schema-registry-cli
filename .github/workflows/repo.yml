@@ -1,0 +1,32 @@
+name: repo
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+
+  # Check commits messages
+  conventional-commit:
+    runs-on: ubuntu-latest
+    name: check conventional commit compliance
+    steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 0
+      - name: Conventional commits check
+        uses: oknozor/cocogitto-action@v2
+
+  # Spelling
+  spelling:
+    name: Spell Check with Typos
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Actions Repository
+      uses: actions/checkout@v3
+    - name: Spell Check Repo
+      uses: crate-ci/typos@master

@@ -4,10 +4,6 @@ All notable changes to this project will be documented in this file.
 
 ## [unreleased]
 
-### Documentation
-
-- 📄 Update changelog
-
 ### Features
 
 - ✨ Add schema API (#1)

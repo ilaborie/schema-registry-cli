@@ -86,8 +86,12 @@ install:
 # Generate changelog
 changelog:
     git cliff --verbose --output CHANGELOG.md
-    git add CHANGELOG.md
-    cog commit docs '📄 Update changelog'
+    @git add CHANGELOG.md
+    @if [ -n "$(git status --porcelain)" ]; then \
+        cog commit docs '📄 Update changelog'; \
+    else \
+        echo "no changes to commit"; \
+    fi
 
 # Release
 release *ARGS:

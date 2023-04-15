@@ -83,6 +83,9 @@ doc:
 install:
     cargo install --path .
 
+# Release {major, minor, patch, release, rc, beta, alpha} or version
+changelog:
+    cargo changelog --write schema-registry-api
 
 # Release {major, minor, patch, release, rc, beta, alpha} or version
 release:

@@ -5,7 +5,44 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.1.2 (2023-04-15)
+
+### Documentation
+
+ - <csr-id-4460f7fd1ceffdb764b2095ccb7615b1326b35ef/> 🐛 Fix invalid badges
+ - <csr-id-485a20526eeaf00c681d1bd50310559141f3bbe5/> 🐛 Fix bad mardkown links
+ - <csr-id-01f291f5c5241db1cb3df2953377b6041a54bbf3/> 📄 Improve crate documentation
+
+### Test
+
+ - <csr-id-546006e723adb1bc3a73d989ec3b166d6fe5af07/> 🧪 Improve doc and tests
+
+### Commit Statistics
+
+<csr-read-only-do-not-edit/>
+
+ - 4 commits contributed to the release.
+ - 4 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 0 issues like '(#ID)' were seen in commit messages
+
+### Commit Details
+
+<csr-read-only-do-not-edit/>
+
+<details><summary>view details</summary>
+
+ * **Uncategorized**
+    - 🐛 Fix invalid badges ([`4460f7f`](https://github.com/ilaborie/schema-registry-cli/commit/4460f7fd1ceffdb764b2095ccb7615b1326b35ef))
+    - 🐛 Fix bad mardkown links ([`485a205`](https://github.com/ilaborie/schema-registry-cli/commit/485a20526eeaf00c681d1bd50310559141f3bbe5))
+    - 🧪 Improve doc and tests ([`546006e`](https://github.com/ilaborie/schema-registry-cli/commit/546006e723adb1bc3a73d989ec3b166d6fe5af07))
+    - 📄 Improve crate documentation ([`01f291f`](https://github.com/ilaborie/schema-registry-cli/commit/01f291f5c5241db1cb3df2953377b6041a54bbf3))
+</details>
+
 ## 0.1.1 (2023-04-15)
+
+### Chore
+
+ - <csr-id-55b5754c5baae15d6e80aa8daee0afe28787fa21/> 🏷️ Release schema-registry-api v0.1.1
 
 ### Documentation
 
@@ -20,8 +57,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <csr-read-only-do-not-edit/>
 
- - 2 commits contributed to the release.
- - 2 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 3 commits contributed to the release.
+ - 3 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -31,6 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - 🏷️ Release schema-registry-api v0.1.1 ([`55b5754`](https://github.com/ilaborie/schema-registry-cli/commit/55b5754c5baae15d6e80aa8daee0afe28787fa21))
     - 📄 Update changelog ([`b4b3197`](https://github.com/ilaborie/schema-registry-cli/commit/b4b319780dfb11f861fcbd5c84c3d2d44794a0e9))
     - ✨ Add some examples ([`d0ac9d2`](https://github.com/ilaborie/schema-registry-cli/commit/d0ac9d29f3b2be482e3ca03e16b35e3fc859c621))
 </details>

@@ -3,7 +3,7 @@
 @base_url=http://localhost:8081
 # @base_url=http://localhost:9081
 
-@subjectName=plop-adad
+@subjectName=plop
 @schemaVersion=latest
 
 ###

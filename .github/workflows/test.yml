@@ -168,7 +168,7 @@ jobs:
             target
             /home/runner/.cargo
           key: ${{ steps.target-cache-restore.outputs.cache-primary-key }}
-      # - name: Upload to codecov.io
-      #   uses: codecov/codecov-action@v3
-      #   with:
-      #     fail_ci_if_error: true
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: true

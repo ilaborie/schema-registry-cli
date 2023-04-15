@@ -30,7 +30,7 @@ pub struct Subject {
 }
 
 /// Register a schema
-#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Default, serde::Serialize, serde::Deserialize)]
 pub struct RegisterSchema {
     /// The schema string
     pub schema: String,

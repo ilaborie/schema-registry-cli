@@ -93,9 +93,14 @@ changelog:
         echo "no changes to commit"; \
     fi
 
-# Release
-release *ARGS:
-    cargo release {{ARGS}}
+# Release {major, minor, patch, release, rc, beta, alpha} or version
+release version="patch":
+    cargo release --workspace {{version}}
+
+# DO Release {major, minor, patch, release, rc, beta, alpha} or version
+release-execute version="patch":
+    just changelog 
+    cargo release  --workspace --execute {{version}}
 
 # Update with template
 dev-template:

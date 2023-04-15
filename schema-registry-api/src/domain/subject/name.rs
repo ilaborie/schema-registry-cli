@@ -5,6 +5,23 @@ use std::str::FromStr;
 use crate::SubjectNameError;
 
 /// A subject name
+///
+/// You can build the schema id from a string
+///
+/// ```rust
+/// # use schema_registry_api::SubjectName;
+/// let a_topic_value = "a-topic-value".parse::<SubjectName>().expect("Should be a valid name");
+/// let a_topic_key = "a-topic-key".parse::<SubjectName>().expect("Should be a valid name");
+/// ```
+///
+/// Note that name could not contains control characters
+///
+/// ```rust
+/// #  use schema_registry_api::SubjectName;
+/// let result = "\n".parse::<SubjectName>(); // 🚨 Error
+/// assert!(result.is_err());
+/// ```
+///
 #[derive(Debug, Clone, PartialEq, Eq, Hash, serde::Serialize, serde::Deserialize)]
 pub struct SubjectName(String);
 

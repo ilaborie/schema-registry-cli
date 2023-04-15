@@ -8,6 +8,27 @@ use serde::{Deserialize, Serialize};
 use crate::SchemaVersionError;
 
 /// The schema version
+///
+/// A schema version could be a number in [1, 2^31-1],
+/// or the 'latest' version.
+///
+/// You can build a schema version from a string
+///
+/// ```rust
+/// #  use schema_registry_api::SchemaVersion;
+/// let version = "2".parse::<SchemaVersion>().unwrap();
+/// let latest1 = "latest".parse::<SchemaVersion>().unwrap();
+/// let latest2 = "-1".parse::<SchemaVersion>().unwrap();
+/// assert_eq!(latest1, latest2);
+/// ```
+///
+/// Note that version could not start with `0`
+///
+/// ```rust
+/// #  use schema_registry_api::SchemaVersion;
+/// let result = "0".parse::<SchemaVersion>(); // 🚨 Error
+/// assert!(result.is_err());
+/// ```
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub enum SchemaVersion {
     /// A standard version

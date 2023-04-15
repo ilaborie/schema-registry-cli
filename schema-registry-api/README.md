@@ -1,9 +1,9 @@
 # Schema registry API
 
-[![Crates.io](https://img.shields.io/crates/v/schema-registry-cli.svg)](https://crates.io/crates/schema-registry-cli)
-[![Documentation](https://docs.rs/schema-registry-cli/badge.svg)](https://docs.rs/schema-registry-cli/)
-[![Codecov](https://codecov.io/github/ilaborie/schema-registry-cli/coverage.svg?branch=main)](https://codecov.io/gh/ilaborie/schema-registry-cli)
-[![Dependency status](https://deps.rs/repo/github/ilaborie/schema-registry-cli/status.svg)](https://deps.rs/repo/github/ilaborie/schema-registry-cli)
+[![Crates.io](https://img.shields.io/crates/v/schema-registry-api.svg)](https://crates.io/crates/schema-registry-api)
+[![Documentation](https://docs.rs/schema-registry-api/badge.svg)](https://docs.rs/schema-registry-api/)
+[![Codecov](https://codecov.io/github/ilaborie/schema-registry-api/coverage.svg?branch=main)](https://codecov.io/gh/ilaborie/schema-registry-api)
+[![Dependency status](https://deps.rs/repo/github/ilaborie/schema-registry-api/status.svg)](https://deps.rs/repo/github/ilaborie/schema-registry-api)
 
 Provide a REST API to call with a schema registry.
 

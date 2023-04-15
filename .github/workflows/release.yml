@@ -6,16 +6,18 @@ permissions:
 on:
   push:
     tags:
-      - v[0-9]+.*
+      - '*'
 
 jobs:
-  create-release:
+  schema-registry-api-release:
+    if: github.repository_owner == 'ilaborie' && startsWith(github.ref_name, 'schema-registry-api-')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: taiki-e/create-gh-release-action@v1
         with:
-          changelog: CHANGELOG.md
+          prefix: schema-registry-api
+          changelog: schema-registry-api/CHANGELOG.md
           branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

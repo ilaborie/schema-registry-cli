@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Conventional commits check
-        uses: oknozor/cocogitto-action@v2
+        uses: oknozor/cocogitto-action@v3
 
   # Spelling
   spelling:

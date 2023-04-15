@@ -11,27 +11,11 @@ requirements:
     cargo binstall cargo-nextest
     cargo binstall cocogitto
 
-pre_commit_hook := '#!/bin/sh
-
-COMMIT_MSG_FILE=\$1
-
-MESSAGE=\$(cat \$COMMIT_MSG_FILE)
-
-prefix="Release"
-if cog verify "\$MESSAGE"; then
-    echo "Commit parse succeeded"
-elif [[ "\$MESSAGE" = "\$prefix"* ]]; then
-    echo "Commit parse succeeded"
-    echo "chore: 🏷️ \$MESSAGE" > \$COMMIT_MSG_FILE
-else 
-    echo "See https://www.conventionalcommits.org/en/v1.0.0"
-    exit 1
-fi'
-
 install-git-hooks:
     cog install-hook all
     @echo "🩹 fix hook to work with cargo smart release"
-    @echo "{{pre_commit_hook}}" > .git/hooks/pre-commit
+    @cat hooks/commit-msg > .git/hooks/commit-msg
+    @chmod a+x .git/hooks/commit-msg
 
 # Run TDD mode
 tdd:

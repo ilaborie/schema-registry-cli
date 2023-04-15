@@ -24,8 +24,10 @@ jobs:
           components: rustfmt
       - name: cargo fmt --check
         run: cargo fmt --check
-      - name: cargo install cargo-sort
-        uses: taiki-e/install-action@cargo-sort
+      - name: cargo binstall cargo-sort
+        uses: brndnmtthws/rust-action-cargo-binstall@v1
+        with:
+          packages: cargo-sort
       - name: cargo sort
         run: cargo sort --workspace --grouped --check
 

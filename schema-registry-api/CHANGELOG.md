@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 0.1.1 (2023-04-15)
+
+### Documentation
+
+ - <csr-id-b4b319780dfb11f861fcbd5c84c3d2d44794a0e9/> 📄 Update changelog
 
 ### New Features
 
@@ -16,8 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <csr-read-only-do-not-edit/>
 
- - 1 commit contributed to the release.
- - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
+ - 2 commits contributed to the release.
+ - 2 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -27,10 +31,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - 📄 Update changelog ([`b4b3197`](https://github.com/ilaborie/schema-registry-cli/commit/b4b319780dfb11f861fcbd5c84c3d2d44794a0e9))
     - ✨ Add some examples ([`d0ac9d2`](https://github.com/ilaborie/schema-registry-cli/commit/d0ac9d29f3b2be482e3ca03e16b35e3fc859c621))
 </details>
 
 ## v0.1.0 (2023-04-15)
+
+<csr-id-1dfc85e6c852b20950120cafe97980a20b7e505b/>
+<csr-id-80846967e170f7c18f4a429335f4d17b3777aba2/>
 
 ### Chore
 
@@ -40,7 +48,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
  - <csr-id-964296a8e92bd289f0230350d89de80c857038c7/> ✨ Add schema API
    * chore: 🐳 Add Docker compose for Kafka + Schema Registry + Kafdrop
-   * feat: ✨ Implement the API client
+* feat: ✨ Implement the API client
 
 ### Other
 

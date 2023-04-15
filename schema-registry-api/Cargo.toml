@@ -10,9 +10,9 @@ rust-version = "1.64.0" # MSRV from clap
 keywords = ["schema-registry"]
 categories = []
 
-documentation = "https://docs.rs/schema-registry-cli"
-homepage = "https://github.com/ilaborie/schema-registry-cli"
-repository = "https://github.com/ilaborie/schema-registry-cli.git"
+documentation = "https://docs.rs/schema-registry-api"
+homepage = "https://github.com/ilaborie/schema-registry-api"
+repository = "https://github.com/ilaborie/schema-registry-api.git"
 
 [features]
 

@@ -22,8 +22,8 @@ tdd:
     cargo watch -c -s "just check"
 
 # Help of the application
-help:
-    cargo run --quiet -- --help
+help cmd="":
+    cargo run -p schema-registry-cli --quiet -- {{cmd}} --help
 
 # Launch tests
 test:

@@ -5,11 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.1.3 (2023-04-15)
+## 0.1.4 (2023-04-16)
 
 ### Chore
 
- - <csr-id-f72a149825923327b4679d602e3113e44bce9477/> 🐛 Fix links
+ - <csr-id-1b1ef67f316c315fadab72a5d67482cb74d625ad/> ❌ Remove useless dependency
 
 ### Commit Statistics
 
@@ -26,12 +26,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - ❌ Remove useless dependency ([`1b1ef67`](https://github.com/ilaborie/schema-registry-cli/commit/1b1ef67f316c315fadab72a5d67482cb74d625ad))
+</details>
+
+## 0.1.3 (2023-04-15)
+
+<csr-id-f72a149825923327b4679d602e3113e44bce9477/>
+
+### Chore
+
+ - <csr-id-f72a149825923327b4679d602e3113e44bce9477/> 🐛 Fix links
+
+### Chore
+
+ - <csr-id-4122e13d051264cbb76011f1038ff8ea9cac03c7/> 🏷️ Release schema-registry-api v0.1.3
+
+### Commit Statistics
+
+<csr-read-only-do-not-edit/>
+
+ - 2 commits contributed to the release.
+ - 2 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 0 issues like '(#ID)' were seen in commit messages
+
+### Commit Details
+
+<csr-read-only-do-not-edit/>
+
+<details><summary>view details</summary>
+
+ * **Uncategorized**
+    - 🏷️ Release schema-registry-api v0.1.3 ([`4122e13`](https://github.com/ilaborie/schema-registry-cli/commit/4122e13d051264cbb76011f1038ff8ea9cac03c7))
     - 🐛 Fix links ([`f72a149`](https://github.com/ilaborie/schema-registry-cli/commit/f72a149825923327b4679d602e3113e44bce9477))
 </details>
 
 ## 0.1.2 (2023-04-15)
 
 <csr-id-546006e723adb1bc3a73d989ec3b166d6fe5af07/>
+<csr-id-97a400797eafc4f3cc280fe08f6e12fdfa7a088f/>
 
 ### Documentation
 

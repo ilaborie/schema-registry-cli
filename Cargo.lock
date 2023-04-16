@@ -952,7 +952,7 @@ dependencies = [
 
 [[package]]
 name = "schema-registry-api"
-version = "0.1.3"
+version = "0.1.4"
 dependencies = [
  "anyhow",
  "assert2",

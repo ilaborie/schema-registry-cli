@@ -1,10 +1,8 @@
-[![Crates.io](https://img.shields.io/crates/v/schema-registry-cli.svg)](https://crates.io/crates/schema-registry-cli)
-[![Documentation](https://docs.rs/schema-registry-cli/badge.svg)](https://docs.rs/schema-registry-cli/)
-[![Codecov](https://codecov.io/github/ilaborie/schema-registry-cli/coverage.svg?branch=main)](https://codecov.io/gh/ilaborie/schema-registry-cli)
-[![Dependency status](https://deps.rs/repo/github/ilaborie/schema-registry-cli/status.svg)](https://deps.rs/repo/github/ilaborie/schema-registry-cli)
+# A Rust Schema Registry Toolkit
 
-# Schema Registry toolkit
+Contains
 
+[`schema-registry-api`](./schema-registry-api//README.md) crate.
 
 ## License
 

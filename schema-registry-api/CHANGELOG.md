@@ -5,18 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 0.1.4 (2023-04-16)
+## Unreleased
 
-### Chore
+### New Features
 
- - <csr-id-1b1ef67f316c315fadab72a5d67482cb74d625ad/> ❌ Remove useless dependency
+ - <csr-id-cf032e8fdf83a16e8b30790ae0cae6a66c4d1dee/> ✨ CLI for schema registry
+
+### Refactor
+
+ - <csr-id-4153bba84c647a891383c17e997873b38d722551/> ♻️ Borrow instead of move
 
 ### Commit Statistics
 
 <csr-read-only-do-not-edit/>
 
- - 1 commit contributed to the release.
- - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
+ - 2 commits contributed to the release.
+ - 7 days passed between releases.
+ - 2 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -26,12 +31,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - ✨ CLI for schema registry ([`cf032e8`](https://github.com/ilaborie/schema-registry-cli/commit/cf032e8fdf83a16e8b30790ae0cae6a66c4d1dee))
+    - ♻️ Borrow instead of move ([`4153bba`](https://github.com/ilaborie/schema-registry-cli/commit/4153bba84c647a891383c17e997873b38d722551))
+</details>
+
+## 0.1.4 (2023-04-16)
+
+<csr-id-1b1ef67f316c315fadab72a5d67482cb74d625ad/>
+
+### Chore
+
+ - <csr-id-1b1ef67f316c315fadab72a5d67482cb74d625ad/> ❌ Remove useless dependency
+
+### Chore
+
+ - <csr-id-891b0a3d458e604b629155a166fadafa0f46f7a1/> 🏷️ Release schema-registry-api v0.1.4
+
+### Commit Statistics
+
+<csr-read-only-do-not-edit/>
+
+ - 2 commits contributed to the release.
+ - 2 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 0 issues like '(#ID)' were seen in commit messages
+
+### Commit Details
+
+<csr-read-only-do-not-edit/>
+
+<details><summary>view details</summary>
+
+ * **Uncategorized**
+    - 🏷️ Release schema-registry-api v0.1.4 ([`891b0a3`](https://github.com/ilaborie/schema-registry-cli/commit/891b0a3d458e604b629155a166fadafa0f46f7a1))
     - ❌ Remove useless dependency ([`1b1ef67`](https://github.com/ilaborie/schema-registry-cli/commit/1b1ef67f316c315fadab72a5d67482cb74d625ad))
 </details>
 
 ## 0.1.3 (2023-04-15)
 
 <csr-id-f72a149825923327b4679d602e3113e44bce9477/>
+<csr-id-4122e13d051264cbb76011f1038ff8ea9cac03c7/>
 
 ### Chore
 

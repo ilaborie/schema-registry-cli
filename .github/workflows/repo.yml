@@ -18,6 +18,10 @@ jobs:
       - uses: actions/checkout@main
         with:
           fetch-depth: 0
+      - name: FIX weird merge commit
+        run: git reset --hard HEAD^
+      - name: Log commits
+        run: git log --oneline
       - name: Conventional commits check
         uses: oknozor/cocogitto-action@v3
 

@@ -22,8 +22,8 @@ tdd:
     cargo watch -c -s "just check"
 
 # Help of the application
-help:
-    cargo run --quiet -- --help
+help cmd="":
+    cargo run -p schema-registry-cli --quiet -- {{cmd}} --help
 
 # Launch tests
 test:
@@ -92,14 +92,15 @@ install:
 # Release {major, minor, patch, release, rc, beta, alpha} or version
 changelog:
     cargo changelog --write schema-registry-api
+    cargo changelog --write schema-registry-cli
 
 # Release {major, minor, patch, release, rc, beta, alpha} or version
 release:
     cargo smart-release --update-crates-index schema-registry-api
 
 # DO Release {major, minor, patch, release, rc, beta, alpha} or version
-release-execute: 
-    cargo smart-release --update-crates-index schema-registry-api --execute
+release-execute version="": 
+    cargo smart-release --update-crates-index schema-registry-api --execute --bump {{version}}
 
 # Update with template
 dev-template:

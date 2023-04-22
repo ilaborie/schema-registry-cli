@@ -20,7 +20,7 @@ impl CompatibilityClient<'_> {
         &self,
         subject: &SubjectName,
         version: SchemaVersion,
-        schema: RegisterSchema,
+        schema: &RegisterSchema,
         verbose: Option<bool>,
     ) -> Result<CompatibilityResult, SchemaRegistryError> {
         let path = format!("compatibility/subjects/{subject}/versions/{version}");
@@ -29,7 +29,7 @@ impl CompatibilityClient<'_> {
             let query = format!("verbose={verbose}");
             url.set_query(Some(&query));
         }
-        self.sr.post(url, &schema).await
+        self.sr.post(url, schema).await
     }
 
     /// Perform a compatibility check on the schema against one or more versions in the subject,
@@ -43,7 +43,7 @@ impl CompatibilityClient<'_> {
     pub async fn check_versions(
         &self,
         subject: &SubjectName,
-        schema: RegisterSchema,
+        schema: &RegisterSchema,
         verbose: Option<bool>,
     ) -> Result<CompatibilityResult, SchemaRegistryError> {
         let path = format!("compatibility/subjects/{subject}/versions");
@@ -52,6 +52,6 @@ impl CompatibilityClient<'_> {
             let query = format!("verbose={verbose}");
             url.set_query(Some(&query));
         }
-        self.sr.post(url, &schema).await
+        self.sr.post(url, schema).await
     }
 }

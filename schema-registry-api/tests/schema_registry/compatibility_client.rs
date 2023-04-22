@@ -14,13 +14,11 @@ pub async fn should_works_no_subject<'a>(client: &CompatibilityClient<'a>) -> an
     };
 
     info!("compatibilityCheckVersion");
-    let result = client
-        .check_version(&name, version, schema.clone(), None)
-        .await?;
+    let result = client.check_version(&name, version, &schema, None).await?;
     check!(result.is_compatible == true);
 
     info!("compatibilityCheckVersions");
-    let result = client.check_versions(&name, schema, None).await?;
+    let result = client.check_versions(&name, &schema, None).await?;
     check!(result.is_compatible == true);
 
     Ok(())
@@ -39,13 +37,11 @@ pub async fn should_works_subject<'a>(
     };
 
     info!("compatibilityCheckVersion");
-    let result = client
-        .check_version(name, version, schema.clone(), None)
-        .await?;
+    let result = client.check_version(name, version, &schema, None).await?;
     check!(result.is_compatible == true);
 
     info!("compatibilityCheckVersions");
-    let result = client.check_versions(name, schema, None).await?;
+    let result = client.check_versions(name, &schema, None).await?;
     check!(result.is_compatible == true);
 
     Ok(())

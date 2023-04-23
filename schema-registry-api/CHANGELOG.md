@@ -5,11 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 1.0.0 (2023-04-23)
+
+<csr-id-4153bba84c647a891383c17e997873b38d722551/>
 
 ### New Features
 
  - <csr-id-cf032e8fdf83a16e8b30790ae0cae6a66c4d1dee/> ✨ CLI for schema registry
+ - <csr-id-61b026741b67ff31692965d218c89d11eb2658d3/> ✨ CLI for schema registry
 
 ### Refactor
 
@@ -31,13 +34,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
-    - ✨ CLI for schema registry ([`cf032e8`](https://github.com/ilaborie/schema-registry-cli/commit/cf032e8fdf83a16e8b30790ae0cae6a66c4d1dee))
+    - ✨ CLI for schema registry ([`61b0267`](https://github.com/ilaborie/schema-registry-cli/commit/61b026741b67ff31692965d218c89d11eb2658d3))
     - ♻️ Borrow instead of move ([`4153bba`](https://github.com/ilaborie/schema-registry-cli/commit/4153bba84c647a891383c17e997873b38d722551))
 </details>
 
 ## 0.1.4 (2023-04-16)
 
 <csr-id-1b1ef67f316c315fadab72a5d67482cb74d625ad/>
+<csr-id-891b0a3d458e604b629155a166fadafa0f46f7a1/>
 
 ### Chore
 

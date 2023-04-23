@@ -97,10 +97,12 @@ changelog:
 # Release {major, minor, patch, release, rc, beta, alpha} or version
 release:
     cargo smart-release --update-crates-index schema-registry-api
+    cargo smart-release --update-crates-index schema-registry-cli
 
 # DO Release {major, minor, patch, release, rc, beta, alpha} or version
 release-execute version="": 
     cargo smart-release --update-crates-index schema-registry-api --execute --bump {{version}}
+    cargo smart-release --update-crates-index schema-registry-cli --execute --bump {{version}}
 
 # Update with template
 dev-template:

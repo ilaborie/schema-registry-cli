@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 2.0.0 (2023-05-01)
+
+### Documentation
+
+ - <csr-id-733a965c564a53eb4dd899e46af6dbcb24dd102a/> 📄 Update changelogs
 
 ### Bug Fixes (BREAKING)
 
@@ -15,9 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <csr-read-only-do-not-edit/>
 
- - 1 commit contributed to the release.
+ - 2 commits contributed to the release.
  - 7 days passed between releases.
- - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
+ - 2 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -27,12 +31,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - 📄 Update changelogs ([`733a965`](https://github.com/ilaborie/schema-registry-cli/commit/733a965c564a53eb4dd899e46af6dbcb24dd102a))
     - 🐛 Let user choose the TLS reqwest feature ([`3972b09`](https://github.com/ilaborie/schema-registry-cli/commit/3972b096e3d922cec5a6dad154b52b811a613e0c))
 </details>
 
 ## 1.0.0 (2023-04-23)
 
 <csr-id-4153bba84c647a891383c17e997873b38d722551/>
+<csr-id-e163240ccfce3c65780bf9c606335db006c26219/>
 
 ### New Features
 

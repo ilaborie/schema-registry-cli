@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+### Bug Fixes (BREAKING)
+
+ - <csr-id-3972b096e3d922cec5a6dad154b52b811a613e0c/> 🐛 Let user choose the TLS reqwest feature
+
+### Commit Statistics
+
+<csr-read-only-do-not-edit/>
+
+ - 1 commit contributed to the release.
+ - 7 days passed between releases.
+ - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
+ - 0 issues like '(#ID)' were seen in commit messages
+
+### Commit Details
+
+<csr-read-only-do-not-edit/>
+
+<details><summary>view details</summary>
+
+ * **Uncategorized**
+    - 🐛 Let user choose the TLS reqwest feature ([`3972b09`](https://github.com/ilaborie/schema-registry-cli/commit/3972b096e3d922cec5a6dad154b52b811a613e0c))
+</details>
+
 ## 1.0.0 (2023-04-23)
 
 <csr-id-4153bba84c647a891383c17e997873b38d722551/>
@@ -18,13 +43,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
  - <csr-id-4153bba84c647a891383c17e997873b38d722551/> ♻️ Borrow instead of move
 
+### Chore
+
+ - <csr-id-e163240ccfce3c65780bf9c606335db006c26219/> 🏷️ Release schema-registry-api v1.0.0
+
 ### Commit Statistics
 
 <csr-read-only-do-not-edit/>
 
- - 2 commits contributed to the release.
+ - 3 commits contributed to the release.
  - 7 days passed between releases.
- - 2 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 3 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -34,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - 🏷️ Release schema-registry-api v1.0.0 ([`e163240`](https://github.com/ilaborie/schema-registry-cli/commit/e163240ccfce3c65780bf9c606335db006c26219))
     - ✨ CLI for schema registry ([`61b0267`](https://github.com/ilaborie/schema-registry-cli/commit/61b026741b67ff31692965d218c89d11eb2658d3))
     - ♻️ Borrow instead of move ([`4153bba`](https://github.com/ilaborie/schema-registry-cli/commit/4153bba84c647a891383c17e997873b38d722551))
 </details>

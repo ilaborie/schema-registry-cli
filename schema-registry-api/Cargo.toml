@@ -1,6 +1,6 @@
 [package]
 name = "schema-registry-api"
-version = "1.0.0"
+version = "2.0.0"
 authors = ["Igor Laborie <ilaborie@gmail.com>"]
 description = "REST API for a schema-registry"
 license = "MIT OR Apache-2.0"

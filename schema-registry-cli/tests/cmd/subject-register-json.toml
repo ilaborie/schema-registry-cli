@@ -1,0 +1,4 @@
+bin.name = "schema-registry-cli"
+args = [
+    "subject", "register", "--subject", "a_record-json-value",  "tests/assets/a_record.json"
+]

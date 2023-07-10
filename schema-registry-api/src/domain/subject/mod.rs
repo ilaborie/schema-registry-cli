@@ -15,6 +15,7 @@ pub struct SubjectVersion {
 
 /// A subject
 #[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Subject {
     /// Name of the subject
     pub subject: SubjectName,
@@ -31,6 +32,7 @@ pub struct Subject {
 
 /// Register a schema
 #[derive(Debug, Clone, PartialEq, Eq, Default, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct RegisterSchema {
     /// The schema string
     pub schema: String,

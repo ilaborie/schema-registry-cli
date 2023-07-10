@@ -49,9 +49,9 @@ pub struct RegisterSchemaSettings {
     #[clap(flatten)]
     pub schema_registry: SchemaRegistrySettings,
 
-    /// The subject name
+    /// The subject name, by default we use the file name
     #[clap(short, long)]
-    pub subject: SubjectName,
+    pub subject: Option<SubjectName>,
 
     /// Normalize the schema
     #[clap(long)]
@@ -88,9 +88,9 @@ pub struct CheckCompatibility {
     #[clap(flatten)]
     pub schema_registry: SchemaRegistrySettings,
 
-    /// The subject name
+    /// The subject name, by default we use the file name
     #[clap(short, long)]
-    pub subject: SubjectName,
+    pub subject: Option<SubjectName>,
 
     /// The schema version
     #[clap(long)]
@@ -141,15 +141,15 @@ mod tests {
         schema_registry: SchemaRegistrySettings {
             url: DEFAULT_SCHEMA_REGISTRY_URL.parse().unwrap(),
         },
-        subject: "plop".parse().unwrap(), 
+        subject: Some("plop".parse().unwrap()), 
         normalize: false,
         path: PathBuf::from("./plop-value.avsc"),
     }))]
-    #[case::register(&["bin", "register", "-s", "plop", "./plop-value.avsc", "--normalize"], SubjectSubCommand::Register(RegisterSchemaSettings { 
+    #[case::register(&["bin", "register", "./plop-value.avsc", "--normalize"], SubjectSubCommand::Register(RegisterSchemaSettings { 
         schema_registry: SchemaRegistrySettings {
             url: DEFAULT_SCHEMA_REGISTRY_URL.parse().unwrap(),
         },
-        subject: "plop".parse().unwrap(), 
+        subject: None,
         normalize: true,
         path: PathBuf::from("./plop-value.avsc"),
     }))]
@@ -157,7 +157,7 @@ mod tests {
         schema_registry: SchemaRegistrySettings {
             url: DEFAULT_SCHEMA_REGISTRY_URL.parse().unwrap(),
         },
-        subject: "plop".parse().unwrap(), 
+        subject: Some("plop".parse().unwrap()), 
         version: None,
         path: PathBuf::from("./plop-value.avsc"),
     }))]
@@ -165,7 +165,7 @@ mod tests {
         schema_registry: SchemaRegistrySettings {
             url: DEFAULT_SCHEMA_REGISTRY_URL.parse().unwrap(),
         },
-        subject: "plop".parse().unwrap(), 
+        subject: Some("plop".parse().unwrap()), 
         version: Some("42".parse().unwrap()),
         path: PathBuf::from("./plop-value.avsc"),
     }))]

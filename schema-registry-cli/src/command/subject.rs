@@ -1,4 +1,6 @@
+use std::ffi::OsStr;
 use std::path::Path;
+use std::str::FromStr;
 
 use schema_registry_api::{
     CompatibilityResult, SchemaId, SchemaRegistry, SchemaVersion, Subject, SubjectName,
@@ -71,22 +73,23 @@ pub(crate) async fn display_list_subjects(list_subjects: ListSubjects) -> Result
 /// Fail if the API fail
 pub async fn check_compatibility(
     client_settings: SchemaRegistrySettings,
-    subject: &SubjectName,
+    subject: Option<SubjectName>,
     path: &Path,
     version: Option<SchemaVersion>,
     verbose: bool,
 ) -> Result<CompatibilityResult> {
     let client = SchemaRegistry::try_from(client_settings)?;
     let schema = build_register_schema(path)?;
+    let subject = subject_from_path_option(path, subject)?;
     let result = if let Some(version) = version {
         client
             .compatibility()
-            .check_version(subject, version, &schema, Some(verbose))
+            .check_version(&subject, version, &schema, Some(verbose))
             .await?
     } else {
         client
             .compatibility()
-            .check_versions(subject, &schema, Some(verbose))
+            .check_versions(&subject, &schema, Some(verbose))
             .await?
     };
     Ok(result)
@@ -104,7 +107,7 @@ pub(crate) async fn display_check_compatibility(
     } = check_compatibility;
 
     let result =
-        self::check_compatibility(schema_registry, &subject, &path, version, verbose).await?;
+        self::check_compatibility(schema_registry, subject, &path, version, verbose).await?;
 
     // Display
     if result.is_compatible {
@@ -116,6 +119,19 @@ pub(crate) async fn display_check_compatibility(
     Ok(())
 }
 
+fn subject_from_path_option(path: &Path, subject: Option<SubjectName>) -> Result<SubjectName> {
+    if let Some(s) = subject {
+        Ok(s)
+    } else {
+        let name = path
+            .file_stem()
+            .and_then(OsStr::to_str)
+            .expect("Should have a file name");
+        let result = SubjectName::from_str(name)?;
+        Ok(result)
+    }
+}
+
 /// Register a schema for a subject
 ///
 /// # Errors
@@ -123,15 +139,16 @@ pub(crate) async fn display_check_compatibility(
 /// Fail if the API fail
 pub async fn register_schema(
     client_settings: SchemaRegistrySettings,
-    subject: &SubjectName,
+    subject: Option<SubjectName>,
     path: &Path,
     normalize: bool,
 ) -> Result<SchemaId> {
     let client = SchemaRegistry::try_from(client_settings)?;
     let schema = build_register_schema(path)?;
+    let subject = subject_from_path_option(path, subject)?;
     let result = client
         .subject()
-        .new_version(subject, &schema, Some(normalize))
+        .new_version(&subject, &schema, Some(normalize))
         .await?;
     Ok(result.id)
 }
@@ -144,7 +161,7 @@ pub(crate) async fn display_register_schema(register_schema: RegisterSchemaSetti
         path,
     } = register_schema;
 
-    let result = self::register_schema(schema_registry, &subject, &path, normalize).await?;
+    let result = self::register_schema(schema_registry, subject, &path, normalize).await?;
 
     // Display
     println!("Registered schema id: {result}");

@@ -80,3 +80,14 @@ Content-Type: application/json
 }
 
 
+
+###
+# @name subjectNewVersion
+POST {{base_url}}/subjects/{{subjectName}}/versions
+Accept: application/vnd.schemaregistry.v1+json
+Content-Type: application/json
+
+{
+    "schema": "syntax = \"proto3\"; package com.acme; message OtherRecord {\n  int32 other_id = 1;\n}",
+    "schemaType": "PROTOBUF",
+}

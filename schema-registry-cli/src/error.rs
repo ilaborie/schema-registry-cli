@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-use schema_registry_api::SchemaRegistryError;
+use schema_registry_api::{SchemaRegistryError, SubjectNameError};
 
 /// A schema registry CLI error
 #[derive(Debug, thiserror::Error)]
@@ -12,6 +12,10 @@ pub enum CliError {
     /// Client error
     #[error(transparent)]
     ApiError(#[from] SchemaRegistryError),
+
+    /// Subject name error
+    #[error(transparent)]
+    SubjectNameError(#[from] SubjectNameError),
 
     /// I/O error
     #[error(transparent)]

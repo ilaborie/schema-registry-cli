@@ -27,15 +27,29 @@ async fn should_api_works() -> anyhow::Result<()> {
 
     // Register schema
     let subject = format!("my-test-subject-{}", Ulid::new());
-    let subject = subject.parse()?;
+    let subject = subject.parse::<SubjectName>()?;
     let path = Path::new("tests/assets/a_record.avsc");
-    let id = register_schema(client_settings.clone(), &subject, &path, false).await?;
+    let id = register_schema(client_settings.clone(), Some(subject.clone()), &path, false).await?;
     dbg!(&id);
 
     // Check compatibility
     let version = Some(SchemaVersion::Latest);
-    check_compatibility(client_settings.clone(), &subject, &path, version, true).await?;
-    let compat = check_compatibility(client_settings.clone(), &subject, &path, None, true).await?;
+    check_compatibility(
+        client_settings.clone(),
+        Some(subject.clone()),
+        &path,
+        version,
+        true,
+    )
+    .await?;
+    let compat = check_compatibility(
+        client_settings.clone(),
+        Some(subject.clone()),
+        &path,
+        None,
+        true,
+    )
+    .await?;
     dbg!(&compat);
     assert!(compat.is_compatible);
 
@@ -88,7 +102,7 @@ async fn should_lib_works() -> anyhow::Result<()> {
 
     let command = SubjectSubCommand::Register(RegisterSchemaSettings {
         schema_registry: client_settings.clone(),
-        subject: subject.clone(),
+        subject: Some(subject.clone()),
         normalize: true,
         path: path.to_path_buf(),
     });
@@ -101,7 +115,7 @@ async fn should_lib_works() -> anyhow::Result<()> {
     // Check compatibility
     let command = SubjectSubCommand::Check(CheckCompatibility {
         schema_registry: client_settings.clone(),
-        subject: subject.clone(),
+        subject: Some(subject.clone()),
         version: None,
         path: path.to_path_buf(),
     });

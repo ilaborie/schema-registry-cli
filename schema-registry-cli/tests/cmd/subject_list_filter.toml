@@ -1,0 +1,4 @@
+bin.name = "schema-registry-cli"
+args = [
+    "subject", "list", "plop-"
+]

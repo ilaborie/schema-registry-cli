@@ -1,0 +1,4 @@
+bin.name = "schema-registry-cli"
+args = [
+    "subject", "register", "tests/assets/a_record.avro"
+]

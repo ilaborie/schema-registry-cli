@@ -1425,7 +1425,7 @@ dependencies = [
 
 [[package]]
 name = "schema-registry-cli"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
  "anyhow",
  "assert2",

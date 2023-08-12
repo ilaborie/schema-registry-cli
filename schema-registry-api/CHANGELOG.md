@@ -5,23 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 2.0.0 (2023-05-01)
+## Unreleased
 
-### Documentation
+### Bug Fixes
 
- - <csr-id-733a965c564a53eb4dd899e46af6dbcb24dd102a/> 📄 Update changelogs
+ - <csr-id-ba2828418d83a07b4396a7c5624d3be85ea9e82d/> Use more ref
 
 ### Bug Fixes (BREAKING)
 
- - <csr-id-3972b096e3d922cec5a6dad154b52b811a613e0c/> 🐛 Let user choose the TLS reqwest feature
+ - <csr-id-a990a6ea9f08537ae43aafe5aa614e02e3ea3fc3/> 🐛 Let user choose the TLS reqwest feature
 
 ### Commit Statistics
 
 <csr-read-only-do-not-edit/>
 
- - 2 commits contributed to the release.
- - 7 days passed between releases.
- - 2 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 4 commits contributed to the release over the course of 102 calendar days.
+ - 110 days passed between releases.
+ - 4 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -31,9 +31,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
-    - 📄 Update changelogs ([`733a965`](https://github.com/ilaborie/schema-registry-cli/commit/733a965c564a53eb4dd899e46af6dbcb24dd102a))
-    - 🐛 Let user choose the TLS reqwest feature ([`3972b09`](https://github.com/ilaborie/schema-registry-cli/commit/3972b096e3d922cec5a6dad154b52b811a613e0c))
+    - Use more ref ([`ba28284`](https://github.com/ilaborie/schema-registry-cli/commit/ba2828418d83a07b4396a7c5624d3be85ea9e82d))
+    - 🏷️ Release schema-registry-api v2.0.0, safety bump schema-registry-cli v2.0.0 ([`6885a56`](https://github.com/ilaborie/schema-registry-cli/commit/6885a563e94f28500057a9820063cef1a92b8a61))
+    - 📄 Update changelogs ([`832f318`](https://github.com/ilaborie/schema-registry-cli/commit/832f3185589f81d29fd9766e0ba70b9c49dfe4bd))
+    - 🐛 Let user choose the TLS reqwest feature ([`a990a6e`](https://github.com/ilaborie/schema-registry-cli/commit/a990a6ea9f08537ae43aafe5aa614e02e3ea3fc3))
 </details>
+
+## 2.0.0 (2023-05-01)
+
+### Chore
+
+ - <csr-id-6885a563e94f28500057a9820063cef1a92b8a61/> 🏷️ Release schema-registry-api v2.0.0, safety bump schema-registry-cli v2.0.0
+
+### Documentation
+
+ - <csr-id-832f3185589f81d29fd9766e0ba70b9c49dfe4bd/> 📄 Update changelogs
+ - <csr-id-733a965c564a53eb4dd899e46af6dbcb24dd102a/> 📄 Update changelogs
+
+### Bug Fixes (BREAKING)
+
+ - <csr-id-3972b096e3d922cec5a6dad154b52b811a613e0c/> 🐛 Let user choose the TLS reqwest feature
 
 ## 1.0.0 (2023-04-23)
 

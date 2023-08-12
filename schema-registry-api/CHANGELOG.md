@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 2.0.1 (2023-08-12)
+
+### Documentation
+
+ - <csr-id-c76cf220c7109b0c8798e4196d169ef1e16a12e8/> 📄 Update changelogs
+ - <csr-id-832f3185589f81d29fd9766e0ba70b9c49dfe4bd/> 📄 Update changelogs
+
+### Chore
+
+ - <csr-id-6885a563e94f28500057a9820063cef1a92b8a61/> 🏷️ Release schema-registry-api v2.0.0, safety bump schema-registry-cli v2.0.0
 
 ### Bug Fixes
 
@@ -19,9 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <csr-read-only-do-not-edit/>
 
- - 4 commits contributed to the release over the course of 102 calendar days.
+ - 5 commits contributed to the release over the course of 102 calendar days.
  - 110 days passed between releases.
- - 4 commits were understood as [conventional](https://www.conventionalcommits.org).
+ - 5 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -31,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
+    - 📄 Update changelogs ([`c76cf22`](https://github.com/ilaborie/schema-registry-cli/commit/c76cf220c7109b0c8798e4196d169ef1e16a12e8))
     - Use more ref ([`ba28284`](https://github.com/ilaborie/schema-registry-cli/commit/ba2828418d83a07b4396a7c5624d3be85ea9e82d))
     - 🏷️ Release schema-registry-api v2.0.0, safety bump schema-registry-cli v2.0.0 ([`6885a56`](https://github.com/ilaborie/schema-registry-cli/commit/6885a563e94f28500057a9820063cef1a92b8a61))
     - 📄 Update changelogs ([`832f318`](https://github.com/ilaborie/schema-registry-cli/commit/832f3185589f81d29fd9766e0ba70b9c49dfe4bd))
@@ -38,6 +48,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 </details>
 
 ## 2.0.0 (2023-05-01)
+
+<csr-id-6885a563e94f28500057a9820063cef1a92b8a61/>
 
 ### Chore
 

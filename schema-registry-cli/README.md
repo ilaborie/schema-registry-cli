@@ -25,6 +25,13 @@ TODO
 
 ## Usage
 
+### Custom Schema Registry URL
+
+By default the commandline interface uses the default Schema Registry URL
+`http://localhost:8081`. You can add the `--url` argument to each subcommand,
+or you can use set the `SCHEMA_REGISTRY_URL` environment variable for a
+different API base URL.
+
 ### Show help
 
 ```console

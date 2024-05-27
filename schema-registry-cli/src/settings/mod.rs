@@ -1,3 +1,4 @@
+use std::env;
 use std::str::FromStr;
 
 use clap::{Args, Parser, Subcommand};
@@ -47,13 +48,21 @@ const DEFAULT_SCHEMA_REGISTRY_URL: &str = "http://localhost:8081";
 #[derive(Debug, Clone, PartialEq, Args)]
 pub struct SchemaRegistrySettings {
     /// The schema registry URL
-    #[clap(short, long, default_value = DEFAULT_SCHEMA_REGISTRY_URL)]
+    #[clap(short, long, default_value_t = SchemaRegistrySettings::get_url_from_env())]
     pub url: Url,
+}
+
+impl SchemaRegistrySettings {
+    fn get_url_from_env() -> Url {
+        let input = env::var("SCHEMA_REGISTRY_URL")
+            .unwrap_or_else(|_| DEFAULT_SCHEMA_REGISTRY_URL.to_string());
+        Url::from_str(&input).expect("Valid URL")
+    }
 }
 
 impl Default for SchemaRegistrySettings {
     fn default() -> Self {
-        let url = Url::from_str(DEFAULT_SCHEMA_REGISTRY_URL).expect("Valid URL");
+        let url = Self::get_url_from_env();
         Self { url }
     }
 }

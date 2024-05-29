@@ -5,19 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 2.0.1 (2023-08-12)
+## 2.1.0 (2024-05-29)
+
+### Chore
+
+ - <csr-id-c4ce0fa4cbcfe4cb2d028795def6cee6ba9f706b/> 🏷️ Release schema-registry-cli v2.0.1
+
+### New Features
+
+ - <csr-id-8412939bd546477f335c32dae59c5660e2c3c9c6/> ✨ Added the ability to use an env var for the API URL.
 
 ### Bug Fixes
 
- - <csr-id-ba2828418d83a07b4396a7c5624d3be85ea9e82d/> Use more ref
+ - <csr-id-828ad2dcf3c7519c361329b4daafd937d82cab0f/> ⬆ Fix minimal tokio dependency
+ - <csr-id-efb3120dd64710db0c0fd7fb06bbf4d85561a094/> Use more ref
 
 ### Commit Statistics
 
 <csr-read-only-do-not-edit/>
 
- - 1 commit contributed to the release over the course of 33 calendar days.
- - 102 days passed between releases.
- - 1 commit was understood as [conventional](https://www.conventionalcommits.org).
+ - 4 commits contributed to the release over the course of 291 calendar days.
+ - 394 days passed between releases.
+ - 4 commits were understood as [conventional](https://www.conventionalcommits.org).
  - 0 issues like '(#ID)' were seen in commit messages
 
 ### Commit Details
@@ -27,13 +36,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <details><summary>view details</summary>
 
  * **Uncategorized**
-    - Use more ref ([`ba28284`](https://github.com/ilaborie/schema-registry-cli/commit/ba2828418d83a07b4396a7c5624d3be85ea9e82d))
+    - ⬆ Fix minimal tokio dependency ([`828ad2d`](https://github.com/ilaborie/schema-registry-cli/commit/828ad2dcf3c7519c361329b4daafd937d82cab0f))
+    - ✨ Added the ability to use an env var for the API URL. ([`8412939`](https://github.com/ilaborie/schema-registry-cli/commit/8412939bd546477f335c32dae59c5660e2c3c9c6))
+    - 🏷️ Release schema-registry-cli v2.0.1 ([`c4ce0fa`](https://github.com/ilaborie/schema-registry-cli/commit/c4ce0fa4cbcfe4cb2d028795def6cee6ba9f706b))
+    - Use more ref ([`efb3120`](https://github.com/ilaborie/schema-registry-cli/commit/efb3120dd64710db0c0fd7fb06bbf4d85561a094))
 </details>
+
+## 2.0.1 (2023-08-12)
+
+### Bug Fixes
+
+ - <csr-id-ba2828418d83a07b4396a7c5624d3be85ea9e82d/> Use more ref
 
 ## 2.0.0 (2023-05-01)
 
 <csr-id-e1bf358ecc8f34464c657655322434793cb698b8/>
 <csr-id-6885a563e94f28500057a9820063cef1a92b8a61/>
+<csr-id-083ac5215086b0cb5a8c7d6be16a9ee59767d0cd/>
 
 ### Chore
 

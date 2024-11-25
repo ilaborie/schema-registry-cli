@@ -33,7 +33,10 @@ impl Display for SchemaType {
 
 /// A Schema payload
 #[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Schema {
+    /// The schema type
+    pub schema_type: Option<SchemaType>,
     /// The schema as string
     pub schema: String,
 }

@@ -50,7 +50,17 @@ async fn main() -> anyhow::Result<()> {
     let subject = "a-topic-value".parse()?;
     // Create the `RegisterSchema`
     let schema = RegisterSchema {
-        schema: include_str!("../tests/assets/a_record.avsc").to_string(),
+        schema: r#"
+{
+    "type": "record",
+    "name": "test",
+    "fields": [
+        {
+            "name": "field1",
+            "type": "string"
+        }
+    ]
+}"#.to_string(),
         ..Default::default()
     };
 

@@ -36,9 +36,7 @@ jobs:
             /home/runner/.cargo
           key: ${{ matrix.toolchain }}-target
       - name: Run docker compose
-        uses: isbang/compose-action@v1.4.1
-        with:
-          compose-file: "./docker/docker-compose.yaml"
+        run: docker compose --file ./docker/docker-compose.yaml up -d
       - name: 'Wait until the container is healthy'
         uses: raschmitt/wait-for-healthy-container/@master
         with:
@@ -75,9 +73,7 @@ jobs:
       - name: cargo update -Zminimal-versions
         run: cargo +nightly update -Zminimal-versions
       - name: Run docker compose
-        uses: isbang/compose-action@v1.4.1
-        with:
-          compose-file: "./docker/docker-compose.yaml"
+        run: docker compose --file ./docker/docker-compose.yaml up -d
       - name: 'Wait until the container is healthy'
         uses: raschmitt/wait-for-healthy-container/@master
         with:
@@ -115,9 +111,7 @@ jobs:
   #         cd "C:\Program Files\Docker\Docker"
   #         ./DockerCli.exe -SwitchDaemon
   #     - name: Run docker compose
-  #       uses: isbang/compose-action@v1.4.1
-  #       with:
-  #         compose-file: "./docker/docker-compose.yaml"
+  #       run: docker compose --file ./docker/docker-compose.yaml up -d
   #     - name: 'Wait until the container is healthy'
   #       uses: raschmitt/wait-for-healthy-container/@master
   #       with:
@@ -151,9 +145,7 @@ jobs:
             /home/runner/.cargo
           key: coverage-target
       - name: Run docker compose
-        uses: isbang/compose-action@v1.4.1
-        with:
-          compose-file: "./docker/docker-compose.yaml"
+        run: docker compose --file ./docker/docker-compose.yaml up -d
       - name: 'Wait until the container is healthy'
         uses: raschmitt/wait-for-healthy-container/@master
         with:
@@ -169,6 +161,6 @@ jobs:
             /home/runner/.cargo
           key: ${{ steps.target-cache-restore.outputs.cache-primary-key }}
       - name: Upload to codecov.io
-        uses: codecov/codecov-action@v3
-        with:
-          fail_ci_if_error: true
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

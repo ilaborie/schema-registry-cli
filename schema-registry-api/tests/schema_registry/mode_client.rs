@@ -23,15 +23,15 @@ pub async fn should_works_subject<'a>(
     let mode = Mode::default();
 
     info!("modeSetSubject");
-    let result = client.set_subject(&name, mode, None).await?;
+    let result = client.set_subject(name, mode, None).await?;
     check!(result == mode);
 
     info!("modeGetSubject");
-    let result = client.get_subject(&name).await?;
+    let result = client.get_subject(name).await?;
     check!(result == mode);
 
     info!("modeDeleteSubject");
-    let result = client.delete_subject(&name).await?;
+    let result = client.delete_subject(name).await?;
     check!(result == mode);
 
     Ok(())

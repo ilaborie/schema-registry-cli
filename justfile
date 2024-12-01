@@ -7,7 +7,7 @@ default:
 # Install require tools
 requirements:
     rustup toolchain add nightly
-    cargo binstall cargo-watch cargo-audit cargo-deny cargo-msrv cargo-semver-checks cargo-llvm-cov
+    cargo binstall bacon cargo-audit cargo-deny cargo-msrv cargo-semver-checks cargo-llvm-cov
     cargo binstall cargo-nextest
     cargo binstall cocogitto
 
@@ -19,7 +19,7 @@ install-git-hooks:
 
 # Run TDD mode
 tdd:
-    cargo watch -c -s "just check"
+    bacon test
 
 # Help of the application
 help cmd="":
@@ -110,4 +110,4 @@ dev-template:
 
 # Start/stop a kafka+schema-registry with docker-compose
 dev-kafka *ARGS="up -d":
-    docker-compose --file ./docker/docker-compose.yaml {{ARGS}}
+    docker compose --file ./docker/docker-compose.yaml {{ARGS}}

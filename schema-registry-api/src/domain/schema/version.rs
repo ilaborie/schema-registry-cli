@@ -77,7 +77,7 @@ impl Serialize for SchemaVersion {
 }
 
 struct SchemaVersionVisitor;
-impl<'de> Visitor<'de> for SchemaVersionVisitor {
+impl Visitor<'_> for SchemaVersionVisitor {
     type Value = SchemaVersion;
 
     fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {

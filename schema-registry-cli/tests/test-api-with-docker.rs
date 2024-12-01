@@ -29,7 +29,7 @@ async fn should_api_works() -> anyhow::Result<()> {
     let subject = format!("my-test-subject-{}", Ulid::new());
     let subject = subject.parse::<SubjectName>()?;
     let path = Path::new("tests/assets/a_record.avsc");
-    let id = register_schema(client_settings.clone(), Some(subject.clone()), &path, false).await?;
+    let id = register_schema(client_settings.clone(), Some(subject.clone()), path, false).await?;
     dbg!(&id);
 
     // Check compatibility
@@ -37,7 +37,7 @@ async fn should_api_works() -> anyhow::Result<()> {
     check_compatibility(
         client_settings.clone(),
         Some(subject.clone()),
-        &path,
+        path,
         version,
         true,
     )
@@ -45,7 +45,7 @@ async fn should_api_works() -> anyhow::Result<()> {
     let compat = check_compatibility(
         client_settings.clone(),
         Some(subject.clone()),
-        &path,
+        path,
         None,
         true,
     )

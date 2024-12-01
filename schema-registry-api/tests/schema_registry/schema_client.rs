@@ -32,8 +32,8 @@ pub async fn should_works_with_schema<'a>(
 ) -> anyhow::Result<()> {
     let id = subject.id;
     let name = subject.subject.clone();
-    let version = subject.version.clone();
-    let schema_normalized = subject.schema.replace(' ', "").replace('\n', "");
+    let version = subject.version;
+    let schema_normalized = subject.schema.replace([' ', '\n'], "");
 
     info!("schemaGet");
     let result = client.get(id, None).await?;

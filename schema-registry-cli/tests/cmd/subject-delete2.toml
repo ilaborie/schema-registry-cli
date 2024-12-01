@@ -1,4 +1,0 @@
-bin.name = "schema-registry-cli"
-args = [
-    "subject", "delete", "-s", "a_record-value", "--version", "1", "--permanent"
-]

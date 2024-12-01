@@ -93,7 +93,7 @@ pub async fn should_works_with_subject<'a>(client: &SubjectClient<'a>) -> anyhow
         schema_type: None,
         references: vec![],
     };
-    let schema_normalized = AN_AVRO_SCHEMA.replace(' ', "").replace('\n', "");
+    let schema_normalized = AN_AVRO_SCHEMA.replace([' ', '\n'], "");
 
     info!("subjectNewVersion");
     let result = client.new_version(&name, &schema, None).await;
@@ -114,7 +114,7 @@ pub async fn should_works_with_subject<'a>(client: &SubjectClient<'a>) -> anyhow
     check!(
         s == Subject {
             subject: name.clone(),
-            id: id.clone(),
+            id: *id,
             version,
             schema_type: SchemaType::Avro,
             schema: schema_normalized.clone(),
@@ -136,7 +136,7 @@ pub async fn should_works_with_subject<'a>(client: &SubjectClient<'a>) -> anyhow
         result
             == Subject {
                 subject: name.clone(),
-                id: id.clone(),
+                id: *id,
                 version,
                 schema_type: SchemaType::Avro,
                 schema: schema_normalized,

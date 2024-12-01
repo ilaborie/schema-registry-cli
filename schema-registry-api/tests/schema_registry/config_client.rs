@@ -27,15 +27,15 @@ pub async fn should_works_subject<'a>(
     };
 
     info!("configSetSubject");
-    let result = client.set_subject(&name, compatibility).await?;
+    let result = client.set_subject(name, compatibility).await?;
     check!(result == compatibility);
 
     info!("configGetSubject");
-    let result = client.get_subject(&name, None).await?;
+    let result = client.get_subject(name, None).await?;
     check!(result.compatibility_level == compatibility.compatibility);
 
     info!("configDeleteSubject");
-    let result = client.delete_subject(&name).await?;
+    let result = client.delete_subject(name).await?;
     check!(result.compatibility_level == compatibility.compatibility);
 
     Ok(())
